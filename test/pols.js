@@ -125,13 +125,13 @@ describe("Polynomial field", () => {
     it("Should evaluate and zero", () => {
         const PF = new PolField(new ZqField(r));
         const p = [PF.F.neg(bigInt(2)), bigInt(1)];
-        const v = PF.eval(p, bigInt(2));
+        const v = PF.eval1(p, bigInt(2));
         assert(PF.F.equals(v, bigInt(0)));
     });
     it("Should evaluate bigger number", () => {
         const PF = new PolField(new ZqField(r));
         const p = [bigInt(1), bigInt(2), bigInt(3)];
-        const v = PF.eval(p, bigInt(2));
+        const v = PF.eval1(p, bigInt(2));
         assert(PF.F.equals(v, bigInt(17)));
     });
     it("Should create lagrange polynomial minmal", () => {
@@ -145,7 +145,7 @@ describe("Polynomial field", () => {
         const p=PF.lagrange(points);
 
         for (let i=0; i<points.length; i++) {
-            const v = PF.eval(p, points[i][0]);
+            const v = PF.eval1(p, points[i][0]);
             assert(PF.F.equals(v, points[i][1]));
         }
     });
@@ -161,7 +161,7 @@ describe("Polynomial field", () => {
         const p=PF.lagrange(points);
 
         for (let i=0; i<points.length; i++) {
-            const v = PF.eval(p, points[i][0]);
+            const v = PF.eval1(p, points[i][0]);
             assert(PF.F.equals(v, points[i][1]));
         }
     });
@@ -208,7 +208,7 @@ describe("Polynomial field", () => {
         const p = PF.ifft(a);
 
         for (let i=0; i<a.length; i++) {
-            const s = PF.F.affine(PF.eval(p, PF.oneRoot(8,i)));
+            const s = PF.F.affine(PF.eval1(p, PF.oneRoot(8,i)));
             assert(s.equals(a[i]));
         }
 

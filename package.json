@@ -1,5 +1,5 @@
 {
-  "name": "snarkjs",
+  "name": "snarkjs-ses",
   "version": "0.1.20",
   "description": "zkSNARKs implementation in JavaScript",
   "main": "index.js",
@@ -25,7 +25,7 @@
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/iden3/snarkjs.git"
+    "url": "https://github.com/Brechtpd/snarkjs.git"
   },
   "dependencies": {
     "big-integer": "^1.6.43",

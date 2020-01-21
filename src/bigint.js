@@ -22,7 +22,7 @@ const bigInt = require("big-integer");
 
 let wBigInt;
 
-if (typeof(BigInt) != "undefined") {
+if (/*typeof(BigInt) != "undefined"*/false) {
     wBigInt  = BigInt;
     wBigInt.one = wBigInt(1);
     wBigInt.zero = wBigInt(0);
